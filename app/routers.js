@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 // controllers
 const recipeController = require('./controllers/recipeController');
-const userController = require('./controllers/userController');
-const adminController = require('./controllers/adminController');
 
 
 // Page d'accueil
