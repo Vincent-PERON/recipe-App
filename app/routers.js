@@ -11,7 +11,7 @@ router.get('/', recipeController.index);
 router.get('/category/:id', recipeController.category);
 
 // // Affichage d'un niveau et des recettes associés 
-// router.get('/level/:id', recipeController.level);
+router.get('/level/:id', recipeController.level);
 
 // // Page de détail d'une recette
 // router.get('/recipe/:id', recipeController.showRecipe);
