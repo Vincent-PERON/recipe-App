@@ -23,6 +23,23 @@ index: async (req, res) => {
 },
 
 // category
+category: async (req, res) => {
+    try {
+        // on récupère l'id de la route paramétrée
+        const id = req.params.id;
+        // on ajoute un include pour avoir accès à une propriété products sur l'objet category contenant les recettes dans un tableau 
+        const category = await Category.findByPk(id, {
+            include: 'recipes',
+        });
+        console.log(category.recipes);
+        res.render('category', {
+            category,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Server Error');
+    }
+},
 
 // level
 

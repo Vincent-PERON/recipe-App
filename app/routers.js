@@ -8,7 +8,7 @@ const recipeController = require('./controllers/recipeController');
 router.get('/', recipeController.index);
 
 // Affichage d'une catégorie et des recettes associées 
-// router.get('/category/:id', recipeController.category);
+router.get('/category/:id', recipeController.category);
 
 // // Affichage d'un niveau et des recettes associés 
 // router.get('/level/:id', recipeController.level);
