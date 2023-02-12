@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const path = require('path');
-
+const router = require('./app/routers');
 
 //
 app.use(express.urlencoded({ extended: true }));
@@ -16,9 +16,11 @@ app.set('views', './app/views');
 app.use(express.static(path.join(__dirname, './public')));
 
 // On affiche une page de test
-app.get('/', (request, response) => {
-    response.send('Hello World!')
-        });
+// app.get('/', (request, response) => {
+//     response.send('Hello World!')
+//         });
+// Nos Routes
+app.use(router);
 
 // On met le serveur en mode écoute
 const port = process.env.PORT || 3000;
