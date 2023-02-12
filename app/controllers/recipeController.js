@@ -92,8 +92,27 @@ submitRecipe: async (req, res) => {
         res.status(500).send('Server Error');
     }
 },
-// addRecipeInDb
 
+// addRecipeInDb
+addRecipeInDb: async (req, res) => {
+    // TODO : AJouter la possibilité d'uploader une image
+    try {
+        // On créé une recette
+        const  { title, instructions, ingredients, category, level } = req.body;
+        await Recipe.create({
+            title: title,
+            ingredients: ingredients,
+            instructions: instructions,
+            category_id: category,
+            level_id: level,
+        });
+        // await Recipe.create(newRecipe);
+        res.redirect('/');
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
+},
 
 
 // searchRecipe

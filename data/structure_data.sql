@@ -37,10 +37,10 @@ CREATE TABLE "users" (
 
 CREATE TABLE "recipes" (
     "id"              INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "title"           TEXT NOT NULL,
-    "ingredients"     varchar[] NOT NULL,
-    "instructions"    TEXT NOT NULL,
-    "picture"         TEXT NOT NULL,
+    "title"           TEXT ,
+    "ingredients"     TEXT,
+    "instructions"    TEXT ,
+    "picture"         TEXT ,
     "category_id"     INTEGER REFERENCES categories("id"),
     "level_id"        INTEGER REFERENCES levels("id"),
     "created_at"      TIMESTAMPTZ NOT NULL DEFAULT NOW(),

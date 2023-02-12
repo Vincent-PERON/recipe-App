@@ -6,7 +6,7 @@ class Recipe extends Sequelize.Model {};
 Recipe.init(
     {
         title: DataTypes.STRING,
-        ingredients: DataTypes.ARRAY(DataTypes.STRING),
+        ingredients: DataTypes.TEXT,
         instructions: DataTypes.TEXT,
         picture: Sequelize.STRING,
         category_id: DataTypes.INTEGER,

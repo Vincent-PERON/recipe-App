@@ -19,8 +19,8 @@ router.get('/recipe/:id', recipeController.showRecipe);
 // Page d'ajout d'une recette
 router.get('/submit-recipe', recipeController.submitRecipe);
 
-// // Ajout d'une recette 
-// router.post('/submit-recipe', recipeController.addRecipeInDb);
+// Ajout d'une recette 
+router.post('/submit-recipe', recipeController.addRecipeInDb);
 
 // // Recherche d'une recette
 router.post('/search', recipeController.searchRecipe);
