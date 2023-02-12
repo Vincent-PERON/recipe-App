@@ -57,7 +57,27 @@ level: async (req, res) => {
         res.status(500).send('Server Error');
     }
 },
+
 // showRecipe
+showRecipe: async (req, res) => {
+    try {
+        // on récupère l'id de la route paramétrée
+        const id = req.params.id;
+    
+        const recipe = await Recipe.findByPk(id, {
+            include: [
+                'category',   // Une recette a une categorie
+                'level',     // Une recette a un niveau de difficulté
+            ]
+        });
+        res.render('recipe', {
+            recipe,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Server Error');
+    }
+},
 
 // submitRecipe
 

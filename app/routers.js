@@ -14,7 +14,7 @@ router.get('/category/:id', recipeController.category);
 router.get('/level/:id', recipeController.level);
 
 // // Page de détail d'une recette
-// router.get('/recipe/:id', recipeController.showRecipe);
+router.get('/recipe/:id', recipeController.showRecipe);
 
 // // Page d'ajout d'une recette
 // router.get('/submit-recipe', recipeController.submitRecipe);
