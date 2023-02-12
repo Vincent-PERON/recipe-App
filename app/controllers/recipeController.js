@@ -1,4 +1,5 @@
 const { Category, Level, Recipe } = require('../models');
+const { Op } = require("sequelize");
 
 const recipeController = {
 
@@ -84,7 +85,23 @@ showRecipe: async (req, res) => {
 // addRecipeInDb
 
 // searchRecipe
-
+searchRecipe: async (req, res) => {
+    try {
+        const searchTerm = req.body.searchTerm;
+        const recipes = await Recipe.findAll({
+            where: {
+                title: {
+                    [Op.iLike]: `%${searchTerm}%`
+                }
+            }
+    });
+        res.render('searchRecipe', {
+            recipes 
+        });
+    } catch (error) {
+        res.status(500).send('Server Error');
+    }
+},
 
 };
 

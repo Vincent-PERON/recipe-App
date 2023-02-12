@@ -23,7 +23,7 @@ router.get('/recipe/:id', recipeController.showRecipe);
 // router.post('/submit-recipe', recipeController.addRecipeInDb);
 
 // // Recherche d'une recette
-// router.post('/search', recipeController.searchRecipe);
+router.post('/search', recipeController.searchRecipe);
 
 
 module.exports = router;
