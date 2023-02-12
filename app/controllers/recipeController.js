@@ -3,7 +3,6 @@ const { Op } = require("sequelize");
 
 const recipeController = {
 
-
 // recipesList
 index: async (req, res) => {
     try {
@@ -81,8 +80,21 @@ showRecipe: async (req, res) => {
 },
 
 // submitRecipe
-
+submitRecipe: async (req, res) => {
+    try {
+        const levels = await Level.findAll();
+        const categories = await Category.findAll();
+        res.render('submitRecipe', {
+            categories, 
+            levels 
+        });
+    } catch (error) {
+        res.status(500).send('Server Error');
+    }
+},
 // addRecipeInDb
+
+
 
 // searchRecipe
 searchRecipe: async (req, res) => {

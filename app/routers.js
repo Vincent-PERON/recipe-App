@@ -10,14 +10,14 @@ router.get('/', recipeController.index);
 // Affichage d'une catégorie et des recettes associées 
 router.get('/category/:id', recipeController.category);
 
-// // Affichage d'un niveau et des recettes associés 
+// Affichage d'un niveau et des recettes associés 
 router.get('/level/:id', recipeController.level);
 
-// // Page de détail d'une recette
+// Page de détail d'une recette
 router.get('/recipe/:id', recipeController.showRecipe);
 
-// // Page d'ajout d'une recette
-// router.get('/submit-recipe', recipeController.submitRecipe);
+// Page d'ajout d'une recette
+router.get('/submit-recipe', recipeController.submitRecipe);
 
 // // Ajout d'une recette 
 // router.post('/submit-recipe', recipeController.addRecipeInDb);
