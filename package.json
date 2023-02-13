@@ -1,0 +1,32 @@
+{
+  "name": "recipe-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "startDB": "bash docker/dev/start-Postgres-PGAdmin.sh",
+    "stopDB": "bash docker/dev/stop-Postgres-PGAdmin.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vincent-PERON/recipe-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vincent-PERON/recipe-App/issues"
+  },
+  "homepage": "https://github.com/Vincent-PERON/recipe-App#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "node-dev": "^8.0.0",
+    "nodemon": "^2.0.20",
+    "pg": "^8.9.0",
+    "sequelize": "^6.28.0"
+  }
+}

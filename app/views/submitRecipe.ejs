@@ -1,0 +1,88 @@
+<%- include('partials/header') %>
+
+<main>
+
+
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Ajouter une recette</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead"></p>
+    </div>
+  </div>
+  
+  <div class="row justify-content-center">
+  
+
+  
+    <div class="col-8">
+  
+      <form method="POST" action="/submit-recipe"  >
+      
+        <div class="row g-3">
+          <div class="col-12">
+            <label for="name" class="form-label">Nom de la recette</label>
+            <input type="text" name="title" id="name" class="form-control" required>
+          </div>
+          
+          <div class="py-3 col-12">
+            <label for="description" class="form-label">Instructions</label>
+            <textarea name="instructions" id="instructions" class="form-control" cols="30" rows="4"></textarea>
+          </div>
+
+          <div class="py-3 col-12">
+            <label for="description" class="form-label">Ingredients</label>
+            <textarea name="ingredients" id="instructions2" class="form-control" cols="30" rows="4"></textarea>
+          </div>
+  
+          <!-- <div class="py-3 col-12">
+            <label for="name" class="form-label">Ingredients</label><br>
+            <small>Exemple: 500g de sucre</small>
+            <div class="ingredientList">
+              <div class="ingredeintDiv mb-1">
+                <input type="text" name="ingredients" class="form-control">
+              </div>
+            </div>
+          </div> -->
+  
+          <!-- <div class="col-12">
+            <button type="button" class="btn btn-outline-primary" id="addIngredientsBtn">+ Ingredient</button>
+          </div> -->
+  
+          <div class="py-3 col-12">
+            <label for="category">Catégorie</label>
+            <select class="form-select form-control" name="category" aria-label="Category">
+              <option selected>Selectionner une categorie</option>
+              <% for(const c of categories) { %>
+                <option value=<%= c.id %>><%= c.name %></option>
+            <% } %>
+            </select>
+          </div>
+          <div class="py-3 col-12">
+            <label for="level">Niveau de difficulté</label>
+            <select class="form-select form-control" name="level" aria-label="Level">
+              <option selected>Selectionner un niveau</option>
+              <% for(const l of levels) { %>
+                <option value=<%= l.id %>><%= l.name %></option>
+            <% } %>
+            </select>
+          </div>
+  
+          <div class="py-3 col-12">
+            <label for="image">Image de la recette</label>
+            <input type="file" class="form-control" name="picture" accept="image/*">
+          </div>
+  
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Ajouter la recette</button>
+          </div>
+  
+        </div>
+      
+      </form>
+  
+    </div>
+  </div>
+
+</main>
+
+<%- include('partials/footer') %>
