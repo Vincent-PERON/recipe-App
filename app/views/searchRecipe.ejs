@@ -4,9 +4,9 @@
 <h1 class="pb-4">Recherche</h1>
 
 <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-    <% if(recipes != '') { %>
-        <% for(const r of recipes) { %>
-            <a href="/recipe/<%= r._id %>" class="col text-center category__link">
+    <% if(searchRecipe != '') { %>
+        <% for(const r of searchRecipe) { %>
+            <a href="/recipe/<%= r.id%>" class="col text-center category__link">
             <div class="category__img category__img--large shadow">
                 <img src="/uploads/<%= r.picture %>" alt="<%= r.title %>" loading="lazy">
             </div>

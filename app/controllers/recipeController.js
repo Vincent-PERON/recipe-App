@@ -119,7 +119,7 @@ addRecipeInDb: async (req, res) => {
 searchRecipe: async (req, res) => {
     try {
         const searchTerm = req.body.searchTerm;
-        const recipes = await Recipe.findAll({
+        const searchRecipe = await Recipe.findAll({
             where: {
                 title: {
                     [Op.iLike]: `%${searchTerm}%`
@@ -127,8 +127,9 @@ searchRecipe: async (req, res) => {
             }
     });
         res.render('searchRecipe', {
-            recipes 
+            searchRecipe 
         });
+        console.log(recipes);
     } catch (error) {
         res.status(500).send('Server Error');
     }
