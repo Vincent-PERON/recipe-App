@@ -18,7 +18,8 @@ index: async (req, res) => {
         res.render('index', { 
             categories,
             levels,
-            recipes
+            recipes, 
+            showCount,
         });
 
     } catch (error) {

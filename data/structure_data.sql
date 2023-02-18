@@ -86,11 +86,15 @@ VALUES (
     "1 nois de coco"
 }',
 'Pour 4 personnes\n        
-ÉTAPE 1: Faire dorer les oignons dans de l''huile d''olive à feu moyen, jusqu''à ce qu''ils soit transparents.\n
-ÉTAPE 2:Ajouter la moitié du curry, puis faites dorer les escalopes en remuant de temps en temps. Saler et poivrer.\n 
-ÉTAPE 3:Baisser le feu, et ajouter le gimgembre, puis couvrir de lait de coco, ajouter le reste du curry, et les copeaux de coco, et les champignons si souhaité.\n        
-ÉTAPE 4:Laisser mijoter environ 30 mn. Servir chaud accompagné de riz thaï. bon appétit!',
-'chinese-steak-tofu-stew.jpg',
+ÉTAPE 1\n
+Faire dorer les oignons dans de l''huile d''olive à feu moyen, jusqu''à ce qu''ils soit transparents.\n
+ÉTAPE 2\n
+Ajouter la moitié du curry, puis faites dorer les escalopes en remuant de temps en temps. Saler et poivrer.\n 
+ÉTAPE 3\n
+Baisser le feu, et ajouter le gimgembre, puis couvrir de lait de coco, ajouter le reste du curry, et les copeaux de coco, et les champignons si souhaité.\n        
+ÉTAPE 4\n
+Laisser mijoter environ 30 mn. Servir chaud accompagné de riz thaï. bon appétit!',
+'poulet-curry-coco.webp',
 7,1 );
 
 INSERT INTO recipes (title, ingredients, instructions, picture, category_id, level_id)

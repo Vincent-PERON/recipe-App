@@ -35,13 +35,21 @@
             <%- recipe.instructions %>
           </div>
         </div>
+
+        <div class="row pt-4">
+          <div class="col-12" style="white-space: pre-line;">
+            <form method="POST" action="/delete">
+              <button type="button" id="deleteRecipe" class="btn btn-danger">Supprimer la recette</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   <% } else { %>
     <p>No item found.</p>
   <% } %>
 
-
+  
 </main>
 
   <%- include('partials/footer') %>
