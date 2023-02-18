@@ -6,10 +6,15 @@ const recipeController = {
 // recipesList
 index: async (req, res) => {
     try {
+        // How many recipes should be show on homepage
+        const showCount = 10
+        
         const levels = await Level.findAll();
         const categories = await Category.findAll();
-        const recipes = await Recipe.findAll();
-
+        const recipes = await Recipe.findAll({ 
+            limit: showCount, 
+            order: [ [ 'created_at', 'DESC' ]] 
+        });
         res.render('index', { 
             categories,
             levels,
