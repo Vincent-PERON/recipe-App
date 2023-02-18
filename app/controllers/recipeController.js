@@ -1,6 +1,5 @@
 const { Category, Level, Recipe } = require('../models');
 const { Op } = require("sequelize");
-const fs = require('file-system');
 
 const recipeController = {
 
@@ -98,8 +97,10 @@ submitRecipe: async (req, res) => {
 addRecipeInDb: async (req, res) => {
     const recipePicture = req.file.filename
     try {
-        // On créé une recette
+        // On récupère les données du formulaire
         const  { title, instructions, ingredients, category, level } = req.body;
+        
+        // on créé un objet "recette" avec les données du formulaire
         await Recipe.create({
             title: title,
             ingredients: ingredients,
@@ -108,7 +109,6 @@ addRecipeInDb: async (req, res) => {
             category_id: category,
             level_id: level,
         });
-        // await Recipe.create(newRecipe);
         res.redirect('/');
     } catch (error) {
         console.log(error);

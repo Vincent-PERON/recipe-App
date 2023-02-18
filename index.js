@@ -1,7 +1,6 @@
 // Création et configuration du serveur HTTP avec express
 const express = require('express');
 
-
 const app = express();
 require('dotenv').config();
 const path = require('path');
@@ -17,10 +16,7 @@ app.set('views', './app/views');
 // On déclare le dossier statique que l'on envoit au navigateur
 app.use(express.static(path.join(__dirname, './public')));
 
-// On affiche une page de test
-// app.get('/', (request, response) => {
-//     response.send('Hello World!')
-//         });
+
 // Nos Routes
 app.use(router);
 

@@ -3,7 +3,7 @@ const router = express.Router();
 const multer  = require('multer')
 
 
-// Multer: Set Storage Engine
+// Multer: Upload middleware
 const upload = require("./middlewares/fileUpload");
 
 // controllers
