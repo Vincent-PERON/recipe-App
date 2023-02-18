@@ -1,9 +1,6 @@
 // Création et configuration du serveur HTTP avec express
 const express = require('express');
 
-// File upload
-const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' })
 
 const app = express();
 require('dotenv').config();

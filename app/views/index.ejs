@@ -63,7 +63,7 @@
                 <% for (const r of recipes) { %>
                     <a href="/recipe/<%= r.id %>" class="col text-center category__link">
                     <div class="category__img category__img--large shadow">
-                        <img src="/uploads/<%= r.picture %>" alt="<%= r.title %>" loading="lazy">
+                        <img src="/uploads/images/<%= r.picture %>" alt="<%= r.title %>" loading="lazy">
                     </div>
                     <div class="pt-1"><%= r.title %></div>
                     </a>

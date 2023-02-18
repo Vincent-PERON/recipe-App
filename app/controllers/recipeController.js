@@ -1,5 +1,6 @@
 const { Category, Level, Recipe } = require('../models');
 const { Op } = require("sequelize");
+const fs = require('file-system');
 
 const recipeController = {
 
@@ -95,7 +96,7 @@ submitRecipe: async (req, res) => {
 
 // addRecipeInDb
 addRecipeInDb: async (req, res) => {
-    // TODO : AJouter la possibilité d'uploader une image
+    const recipePicture = req.file.filename
     try {
         // On créé une recette
         const  { title, instructions, ingredients, category, level } = req.body;
@@ -103,6 +104,7 @@ addRecipeInDb: async (req, res) => {
             title: title,
             ingredients: ingredients,
             instructions: instructions,
+            picture: recipePicture,
             category_id: category,
             level_id: level,
         });
@@ -138,3 +140,4 @@ searchRecipe: async (req, res) => {
 };
 
 module.exports = recipeController;
+
