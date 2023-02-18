@@ -1,7 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const multer  = require('multer')
+
+
+// Multer: Upload middleware
+const upload = require("./middlewares/fileUpload");
+
 // controllers
 const recipeController = require('./controllers/recipeController');
+
 
 
 // Page d'accueil
@@ -20,9 +27,9 @@ router.get('/recipe/:id', recipeController.showRecipe);
 router.get('/submit-recipe', recipeController.submitRecipe);
 
 // Ajout d'une recette 
-router.post('/submit-recipe', recipeController.addRecipeInDb);
+router.post('/submit-recipe',upload.single('recipePicture'),recipeController.addRecipeInDb, );
 
-// // Recherche d'une recette
+// Recherche d'une recette
 router.post('/search', recipeController.searchRecipe);
 
 

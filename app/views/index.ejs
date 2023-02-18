@@ -47,7 +47,7 @@
                             <div class="category__img shadow">
                                 <img src="img/<%- l.picture %>" alt="<%- l.name %>" loading="lazy">
                             </div>
-                            <div class="pt-1"><%- l.name %></div>
+                            <!-- <div class="pt-1"><%- l.name %></div> -->
                             </a>
                         <% } %>
                     <% } %>       
@@ -56,14 +56,14 @@
 
         <!-- Latest Start -->
 
-        <h1 class="py-4 pb-1">Les 10 dernières recettes</h1>
+        <h1 class="py-4 pb-1">Les <% showCount %> dernières recettes</h1>
 
             <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 py-4">
             <% if(recipes != '') { %>
                 <% for (const r of recipes) { %>
                     <a href="/recipe/<%= r.id %>" class="col text-center category__link">
                     <div class="category__img category__img--large shadow">
-                        <img src="/uploads/<%= r.picture %>" alt="<%= r.title %>" loading="lazy">
+                        <img src="/uploads/images/<%= r.picture %>" alt="<%= r.title %>" loading="lazy">
                     </div>
                     <div class="pt-1"><%= r.title %></div>
                     </a>

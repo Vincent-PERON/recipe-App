@@ -6,14 +6,20 @@ const recipeController = {
 // recipesList
 index: async (req, res) => {
     try {
+        // How many recipes should be show on homepage
+        const showCount = 10
+        
         const levels = await Level.findAll();
         const categories = await Category.findAll();
-        const recipes = await Recipe.findAll();
-
+        const recipes = await Recipe.findAll({ 
+            limit: showCount, 
+            order: [ [ 'created_at', 'DESC' ]] 
+        });
         res.render('index', { 
             categories,
             levels,
-            recipes
+            recipes, 
+            showCount,
         });
 
     } catch (error) {
@@ -95,18 +101,20 @@ submitRecipe: async (req, res) => {
 
 // addRecipeInDb
 addRecipeInDb: async (req, res) => {
-    // TODO : AJouter la possibilité d'uploader une image
+    const recipePicture = req.file.filename
     try {
-        // On créé une recette
+        // On récupère les données du formulaire
         const  { title, instructions, ingredients, category, level } = req.body;
+        
+        // on créé un objet "recette" avec les données du formulaire
         await Recipe.create({
             title: title,
             ingredients: ingredients,
             instructions: instructions,
+            picture: recipePicture,
             category_id: category,
             level_id: level,
         });
-        // await Recipe.create(newRecipe);
         res.redirect('/');
     } catch (error) {
         console.log(error);
@@ -119,7 +127,7 @@ addRecipeInDb: async (req, res) => {
 searchRecipe: async (req, res) => {
     try {
         const searchTerm = req.body.searchTerm;
-        const recipes = await Recipe.findAll({
+        const searchRecipe = await Recipe.findAll({
             where: {
                 title: {
                     [Op.iLike]: `%${searchTerm}%`
@@ -127,8 +135,9 @@ searchRecipe: async (req, res) => {
             }
     });
         res.render('searchRecipe', {
-            recipes 
+            searchRecipe 
         });
+        console.log(recipes);
     } catch (error) {
         res.status(500).send('Server Error');
     }
@@ -137,3 +146,4 @@ searchRecipe: async (req, res) => {
 };
 
 module.exports = recipeController;
+

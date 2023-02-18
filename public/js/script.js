@@ -8,3 +8,22 @@ addIngredientsBtn.addEventListener('click', function(){
   input.value = '';
   ingredientList.appendChild(newIngredients);
 });
+
+
+
+const deleteRecipe = document.getElementById('deleteRecipe');
+deleteRecipe.addEventListener('click', function(e) {
+  console.log('button was clicked');
+
+  // fetch('/delete/recipe', {method: 'POST'})
+  //   .then(function(response) {
+  //     if(response.ok) {
+  //       console.log('click was recorded');
+  //       return;
+  //     }
+  //     throw new Error('Request failed.');
+  //   })
+  //   .catch(function(error) {
+  //     console.log(error);
+  //   });
+});
